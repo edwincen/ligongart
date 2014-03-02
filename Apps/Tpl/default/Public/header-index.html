@@ -6,8 +6,9 @@
 <meta name="keywords" content="{$keywords}" />
 <meta name="description" content="{$description}" />
 <link href="../Public/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<load href="../Public/js/jquery-1.7.2.min.js" />
 <load href="../Public/js/jquery.form.js" />
+<load href="../Public/js/jquery.leanModal.min.js" />
 <load href="../Public/js/common.js" />
 <style type="text/css">
 #nav_{$position[0]['id']}{background:url(../Public/images/nav.jpg) no-repeat center;}
@@ -15,7 +16,68 @@
 
 </head>
 <body id="index_body">
+<div id="signin">
+            <div id="signin-ct">
+                <div id="signin-header">
+                    <h2></h2>
+                    <p></p>
+                    <a href="#" class="modal_close"></a>
+                </div>
+                
+                <form action="{:U('Member/login')}" method="post">
+     
+                  <div class="txt-fld">
+                    <label for="">学号：</label>
+                    <input type="text" name="" class="good_input" id="">
 
+                  </div>
+                  <div class="txt-fld">
+                    <label for="">密码：</label>
+                    <input type="text" name="" id="">
+                  </div>
+                  <div class="btn-fld">
+                  <button type="submit">登录</button>
+                  <a href="#signup" class="abutton" id="register2">注册</a>
+</div>
+                 </form>
+            </div>
+        </div>
+<div id="signup">
+            <div id="signup-ct">
+                <div id="signup-header">
+                    <h2>注册账号</h2>
+                    <p></p>
+                    <a href="#" class="modal_close"></a>
+                </div>
+                <form action="">
+                <table>
+                    <tr>
+                        <td><span>所属级</span><select name="" id=""><option value="">01</option></select></td>
+                        <td><span>姓 名</span><input type="text" /></td>
+                        <td><span>密 码</span><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><span>专 业</span><select name="" id=""><option value="">计算机科学与技术</option></select></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span>班 级</span><select name="" id=""><option value="">一班</option></select></td>
+                        <td><span>学 号</span><input type="text" /></td>
+                        <td><span>确认密码</span><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td><span>头像</span><textarea name="" id="" cols="" rows=""></textarea></td>
+                        <td colspan="2"><span>简介</span><textarea name="" id="" cols="" rows=""></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><button>上传</button></td>
+                        <td colspan="2">注册</td>
+                    </tr>
+                </table>
+                </form>  
+            </div>
+        </div>
 <!--百度分享-->
 <div id="header-bg"></div>
 <div id="container">
@@ -24,7 +86,7 @@
         
     	<div class="logo"><a href="__APP__"><img src="__ROOT__/Uploads<yufu:set settag="logo" />" /></a></div>
         <div class="member">
-            <a href="{:U('Member/login')}">登录</a>&nbsp;|&nbsp;<a href="{:U('Member/register')}">注册</a>
+            <a href="#signin" id="login">登录</a>&nbsp;|&nbsp;<a href="#signup" id="register1">注册</a>
             
         </div>
         
@@ -32,7 +94,8 @@
 <script type="text/javascript">
 var t = n = 0, count = $("#play_list a").size();
 $(function(){
-    
+    $("#login").leanModal({closeButton: ".modal_close" });
+    $("#register1,#register2").leanModal({closeButton: ".modal_close" });
     //幻灯片播放
     $("#play_list a:not(:first-child)").hide();
     $("#play_info").html($("#play_list a:first-child").find("img").attr('alt'));

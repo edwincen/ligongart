@@ -2,7 +2,7 @@
 if(!defined('THINK_PATH')) exit();
 return $array = array (
   'DB_TYPE' => 'mysql',
-  'DB_HOST' => '127.0.0.1',
+  'DB_HOST' => '192.168.1.21',
   'DB_NAME' => 'ligongart',
   'DB_USER' => 'root',
   'DB_PWD' => '',

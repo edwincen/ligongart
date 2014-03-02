@@ -271,6 +271,127 @@ img{border: none 0;}
 #main .xiaoguo_content .xiaoguo_body .title{color: #666666; font-size: 19px; font-weight: bolder; margin-bottom: 30px; float: left;}
 #main .xiaoguo_content .xiaoguo_body .content{float: left;width: 1000px}
 
-
-
-
+#lean_overlay {
+    background: none repeat scroll 0 0 #000000;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+#signin ,#signup{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+    display: none;
+    padding-bottom: 2px;
+    width: 404px;
+}
+#signup{
+	width: 600px;
+}
+#signin-header,#signup-header {
+    background: url("../images/hd-bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #CCCCCC;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 18px 18px 14px;
+}
+#signin-header h2,#signup-header h2 {
+    color: #444444;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 3px;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+#signin-header p,#signup-header p {
+    color: #444444;
+    font-size: 1.3em;
+    margin: 0;
+    text-shadow: none;
+}
+.modal_close {
+    background: url("../images/modal_close.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 14px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 14px;
+    z-index: 2;
+}
+#signin .txt-fld {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 14px 20px;
+    position: relative;
+    text-align: right;
+    width: 364px;
+}
+#signin .txt-fld label {
+    color: #222222;
+    display: block;
+    float: left;
+    font-size: 1.3em;
+    padding-top: 8px;
+    text-align: left;
+    width: 90px;
+}
+#signin .txt-fld input {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border-color: #CCCCCC #E7E6E6 #E7E6E6 #CCCCCC;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: #222222;
+    font-family: "Helvetica Neue";
+    font-size: 1.2em;
+    outline: medium none;
+    padding: 8px;
+    width: 244px;
+}
+#signin .btn-fld {
+    overflow: hidden;
+    padding: 12px 20px 12px 130px;
+    width: 254px;
+}
+#signin .btn-fld button {
+    background: none repeat scroll 0 0 #3F9D4A;
+    border: medium none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    overflow: visible;
+    padding: 7px 10px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    width: auto;
+}
+#signin .btn-fld button + button {
+	margin-left: 10px;
+}
+#signin .btn-fld .abutton{
+    background: none repeat scroll 0 0 #3F9D4A;
+    border: medium none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    overflow: visible;
+    padding: 8px 10px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    width: auto;
+    margin-left: 10px;
+}
+#signup input,#signup select{
+	width: 130px;
+}
+#signup span{
+	width: 50px;
+}
+#signup td{
+	width: 33.33%;
+}
