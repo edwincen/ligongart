@@ -1,29 +1,44 @@
 <include file="Public:header" />
+<script type="text/javascript">
+$(function(){
+	$(".delete").click(function(){
+		if(confirm("是否确认删除?")){
+			$(this).next().submit();
+		}
+	});
+});
+</script>
 <div class="main">
     <div class="box_tit">
-        <h2>APP生成下载</h2>
+        <h2>所属级管理</h2>
     </div>
     <table cellpadding="3" cellspacing="3" class="apptable">
-        <tr>
-            <td class="indent25"><span style="color: #367ABB; font-weight: bold;">需要手机APP客户端的用户请按以下步骤获取：</span></td>
-        </tr>
-        <tr>
-            <td class="indent25">1、请联系鱼福官方（<a href="http://www.yufu5.com" target="_blank">http://www.yufu5.com</a>）</td>
-        </tr>
-        <tr>
-            <td class="indent25">2、提交制作手机APP需要的内容，格式如下：<br />
-                <div class="indent50">a)APP应用名称(如：鱼福网)</div>
-                <div class="indent50">b)网站地址（如：http://www.yufu5.com）</div>
-                <div class="indent50">c)APP应用图标（大小：96*96像素&nbsp;&nbsp;背景:透明&nbsp;&nbsp;格式：png）</div>
-
-            </td>
-        </tr>
-        <tr>
-            <td class="indent25">3、鱼福官方会在1-3个工作日为您提供APP客户端的下载</td>
-        </tr>
-        <tr>
-            <td class="indent25">4、APP客户端只对购买过收费模板的用户免费，未购买过收费模板的用户制作一个50元</td>
-        </tr>
+    	<tr>
+    		<th style="width:560px;" >所属级</th>
+    		<th style="width:250px;">操作</th>
+    	</tr>
+    	<if condition="$sessionInfo eq ''">
+    		<td colspan="2" class="indent25">
+    			<center><span style="color: #367ABB; font-weight: bold;">无数据</span></center>
+    		</td>
+    	<else/>
+	    	<volist name="sessionInfo" id="vo">
+	    		<tr>
+	            	<td style="width:560px;text-align: center;" class="indent25">
+	            		<span style="color: #367ABB; font-weight: bold;">{$vo.name}</span>
+	            	</td>
+	            	<td style="width:250px;text-align: center;">
+	            		<a href="{:U('Session/edit',array('name'=>$vo['name'],'id'=>$vo['id']))}">修改</a> &nbsp;&nbsp;
+	            		<a href="#" class="delete">删除</a>
+	            		<form style="display:none;" action="{:U('Session/delete',array('id'=>$vo['id']))}" method="post">
+	            			<input type="text" value="{$vo.id}" class="session_id" name="id"/>
+	            		</form>
+	            	</td>
+	       		</tr>
+	    	</volist>
+    	</if>
     </table>
+    <HR style="filter: alpha(opacity=100,finishopacity=0,style=3);" width="90%" color=#000000 SIZE=3/>
+    <a style="float: right;margin-right:60px;" href="{:U('Session/add')}">添加</a>
 </div>
 <include file="Public:footer" />
