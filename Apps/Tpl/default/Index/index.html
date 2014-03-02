@@ -1,0 +1,114 @@
+<include file="Public:header-index" />
+    <div id="main">
+        <div id="infobar">
+            <div id="info_title">
+                通知: &nbsp;
+            </div>
+            <ul id="info_content">
+                <volist name="info_list" id="vo">
+                    <li class="info_item">
+                        <a href="{$vo.url}">{$vo.title}</a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+        <a style="cursor:pointer" id="left_arrow"></a>
+            <a style="cursor:pointer" id="right_arrow"></a>
+        <div id="menu_banner">
+
+            <ul id="menu_banner_list">
+                <li class="nav_tongzhi">
+                    <a class="tongzhi" href="{:U('Xinwen/index')}"></a>
+                </li>
+                <li class="nav_seprator"></li>
+                <li class="nav_tongzhi">
+                    <a class="zhongxingaikuang" href="{:U('Gaikuang/index')}"></a>
+                </li>
+                <li class="nav_seprator"></li>
+                <li class="nav_tongzhi">
+                    <a class="shiyanjiagou" href="{:U('Jiagou/index')}"></a>
+                </li>
+                <li class="nav_seprator"></li>
+                <li class="nav_tongzhi">
+                    <a class="zhongxinchengguo" href="{:U('Xiaoguo/index')}"></a>
+                </li>
+                <li class="nav_seprator"></li>
+                <li class="nav_tongzhi">
+                    <a class="zhongxintese" href="{:U('Tese/index')}"></a>
+                </li>
+                <li class="nav_seprator"></li>
+                <li class="nav_tongzhi">
+                    <a class="shenbaozhuanlan" href="#"></a>
+                </li>
+                <li class="nav_seprator"></li>
+                <li class="nav_tongzhi">
+                    <a class="shiyanjiaoxue" href="#"></a>
+                </li>
+                <li class="nav_seprator"></li>
+                <li class="nav_tongzhi">
+                    <a class="yuyuepingtai" href="#"></a>
+                </li>
+                <li class="nav_seprator"></li>
+                <li class="nav_tongzhi">
+                    <a class="wangshangketang" href="#"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+<div class="clear"></div>
+<script language="javascript">
+function startmarquee(lh,speed,delay) {
+var p=false;
+var t;
+var o=document.getElementById("info_content");
+o.innerHTML+=o.innerHTML;
+o.style.marginTop=0;
+o.onmouseover=function(){p=true;}
+o.onmouseout=function(){p=false;}
+
+function start(){
+t=setInterval(scrolling,speed);
+if(!p) o.style.marginTop=parseInt(o.style.marginTop)-1+"px";
+}
+function scrolling(){
+if(parseInt(o.style.marginTop)%lh!=0){
+o.style.marginTop=parseInt(o.style.marginTop)-1+"px";
+if(Math.abs(parseInt(o.style.marginTop))>=o.scrollHeight/2) o.style.marginTop=0;
+}else{
+clearInterval(t);
+setTimeout(start,delay);
+}
+}
+setTimeout(start,delay);
+}
+startmarquee(51,20,3000);
+</script>
+<script type="text/javascript">
+$(function(){
+    $("#left_arrow").click(function(){
+        if ($("#menu_banner_list").css("margin-left") == "-1000px") {
+            $("#menu_banner_list").animate({
+                marginLeft: "0px"
+            }, 500);
+        }else if ($("#menu_banner_list").css("margin-left") == "-2000px") {
+            $("#menu_banner_list").animate({
+                marginLeft: "-1000px"
+            }, 500);
+        }else{}
+    });
+    $("#right_arrow").click(function(){
+        
+        if ($("#menu_banner_list").css("margin-left") == "0px") {
+            $("#menu_banner_list").animate({
+                marginLeft: "-1000px"
+            }, 500);
+        }else if ($("#menu_banner_list").css("margin-left") == "-1000px") {
+            $("#menu_banner_list").animate({
+                marginLeft: "-2000px"
+            }, 500);
+        }else{}
+    });
+});
+</script>
+
+<include file="Public:footer-index" />

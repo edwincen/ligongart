@@ -1,0 +1,46 @@
+<include file="Public:header" />
+<div id="main">
+    <div id="breadcrumb">
+        <span>首页&nbsp;/&nbsp;中心动态&nbsp;/&nbsp;新闻&nbsp;/&nbsp;{$data.title}</span>
+    </div>
+    <div class="search_bar">
+        <form>
+            <span>&nbsp;&nbsp;&nbsp;年&nbsp;</span>
+            <select name="year">
+                <option></option>
+            </select>
+            <span>&nbsp;月&nbsp;</span>
+            <select name="month">
+                <option></option>
+            </select>
+            <span>&nbsp;日&nbsp;</span>
+            <select name="day">
+                <option></option>
+            </select>
+            <span>&nbsp;标题内容&nbsp;</span>
+            <input name="title"/>
+            <input type="submit"/>
+        </form>
+    </div>
+    <div id="xinwen_content" >
+        <div class="xinwen_nav">
+            <a class="xinwenblock" href="{:U('Xinwen/index')}" style="color:white">新闻</a>
+            <a class="xinwenblock" href="{:U('Tongzhi/index')}" >通知</a>
+            <div class="remainblock"></div>
+        </div>
+        <div class="xinwen_main">
+            <a>新闻: {$data.title}
+            </a>
+            <span class="dottedline"></span>
+            <span class="date">{$data.create_time|toDate='Y/m/d'}</span>
+            <div class="xinwen_body">
+                {$data.content}
+                
+            </div>
+                
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+</div>
+<include file="Public:footer" />

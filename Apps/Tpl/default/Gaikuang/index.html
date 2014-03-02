@@ -1,0 +1,29 @@
+<include file="Public:header" />
+<div id="main">
+    <div id="breadcrumb">
+        <span>首页&nbsp;/&nbsp;中心概况</span>
+    </div>
+    <div class="main_left">
+        <ul class="gaikuang_nav">
+            <volist name="data" id="vo">
+                
+                <li class="gaikuang_level1">
+                    <span class="level1_title">{$vo.title}</span>
+                    <ul class="gaikuang_nav2">
+                        <volist name="vo['data']" id="vo1">
+                            <li class="gaikuang_level2">
+                                <a class="level2_title" href="{:U('Gaikuang/show',array('id'=>$vo1['id']))}">{$vo1.title}</a>
+                            </li>
+                
+                        </volist>
+                    </ul>
+                </li>
+            
+            </volist>
+        </ul>
+    </div>
+    <div class="gaikuang_main">
+        {$content}
+    </div>
+</div>
+<include file="Public:footer" />

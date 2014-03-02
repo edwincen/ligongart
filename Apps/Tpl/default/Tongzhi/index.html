@@ -1,0 +1,48 @@
+<include file="Public:header" />
+    <div id="main">
+    	<div id="breadcrumb">
+    		<span>首页&nbsp;/&nbsp;中心动态&nbsp;/&nbsp;通知</span>
+        </div>
+        <div class="search_bar">
+        	<form>
+        		<span>&nbsp;&nbsp;&nbsp;年&nbsp;</span>
+        		<select name="year">
+        			<option></option>
+        		</select>
+        		<span>&nbsp;月&nbsp;</span>
+        		<select name="month">
+        			<option></option>
+        		</select>
+        		<span>&nbsp;日&nbsp;</span>
+        		<select name="day">
+        			<option></option>
+        		</select>
+        		<span>&nbsp;标题内容&nbsp;</span>
+        		<input name="title"/>
+        		<input type="submit"/>
+        	</form>
+        </div>
+        <div id="xinwen_content" >
+        	<div class="xinwen_nav">
+        		<a class="xinwenblock" href="{:U('Xinwen/index')}" >新闻</a>
+        		<a class="xinwenblock" href="{:U('Tongzhi/index')}" style="color:white">通知</a>
+        		<div class="remainblock"></div>
+        	</div>
+        	<div class="xinwen_list">
+        		<ul>
+        			<volist name="list" id="vo">
+                    	<li style="border:0px">
+                    		<a href="{:U('Tongzhi/show',array('id'=>$vo['id']))}" target="_blank">通知: {$vo.title}
+                    		</a>
+                    		<span class="dottedline"></span>
+                    		<span class="date">{$vo.create_time|toDate='Y/m/d'}</span>
+                    		
+                    	</li>
+                    </volist>
+        		</ul>
+        	</div>
+        	<div class="clear"></div>
+        	<div class="page">{$page}</div>
+        </div>
+    </div>
+<include file="Public:footer" />

@@ -1,0 +1,24 @@
+<include file="Public:header" />
+<div id="main">
+    <div id="breadcrumb">
+        <span>首页&nbsp;/&nbsp;中心成果&nbsp;/&nbsp;教学成果</span>
+    </div>
+    <div class="xiaoguo_content" >
+        <div class="xiaoguo_nav">
+            <a class="xiaoguoblock" href="{:U('Xiaoguo/index')}" >教学效果</a>
+            <a class="xiaoguoblock" href="{:U('Xiaoguo/chengguo')}" style="color:white">教学成果</a>
+            <a class="xiaoguoblock" href="{:U('Xiaoguo/lunwen')}">学生论文与专利</a>
+            <a class="xiaoguoblock" href="{:U('Xiaoguo/zuopin')}">学生作品与获奖</a>
+            <div class="remainblock"></div>
+        </div>
+        <div class="xiaoguo_body">
+            <div class="title">
+                教学成果
+            </div>
+            <div class="content">
+                {$data.content}
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:footer" />
