@@ -1,0 +1,35 @@
+<include file="Public:header" />
+    <div id="main">
+    	<div id="breadcrumb">
+    		<span>首页&nbsp;/&nbsp;申报专栏</span>
+        </div>
+        <div class="search_bar">
+        	<form>
+        		<span>&nbsp;关键字&nbsp;</span>
+        		<input name="title"/>
+        		<input type="submit"/>
+        	</form>
+        </div>
+        <div id="xinwen_content" >
+        	<div class="xinwen_list">
+        		<ul>
+        			<volist name="data" id="vo">
+                    	<li>
+                    		<a href="{:U('Shenbao/show',array('id'=>$vo['id']))}" target="_blank">{$vo.title}
+                    		</a>
+                    		<span class="dottedline"></span>
+                            <a href="#" id="shenbao_list_download"></a>
+                            <a href="{:U('Shenbao/show',array('id'=>$vo['id']))}" id="shenbao_detail"></a>
+                            
+                    		<span class="date">{$vo.create_time|toDate='Y/m/d'}</span>
+
+                    		
+                    	</li>
+                    </volist>
+        		</ul>
+        	</div>
+        	<div class="clear"></div>
+        	<div class="page">{$page}</div>
+        </div>
+    </div>
+<include file="Public:footer" />
