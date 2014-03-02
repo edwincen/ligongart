@@ -1,0 +1,29 @@
+<include file="Public:header" />
+<script type="text/javascript">
+$(function(){
+	$(".submit").click(function(){
+		$("form").submit();
+	});
+});
+</script>
+<div class="main">
+    <div class="box_tit">
+        <h2>所属级管理/修改级</h2>
+    </div>
+    <form action="{:U('Session/update')}" method="post">
+	    <table cellpadding="3" cellspacing="3" class="apptable">
+	    	<tr>
+	    		<td style="width:560px;text-align:center;">
+	    			<span style="margin-right:100px;">所属级</span>
+	    			<input type="text" name="name" class="session_name" value="{$name}"/>
+	    			<input style="display:none;" type="text" name="id" class="session_id" value="{$id}">
+	    		</td>
+	    		<td style="width:200px;">
+	    			<a href="#" class="submit">确定</a>
+	    		</td>
+	    	</tr>
+	    </table>
+    </form>
+    <HR style="filter: alpha(opacity=100,finishopacity=0,style=3);" width="90%" color=#000000 SIZE=3/>
+</div>
+<include file="Public:footer" />
