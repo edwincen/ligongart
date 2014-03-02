@@ -271,6 +271,9 @@ img{border: none 0;}
 #main .xiaoguo_content .xiaoguo_body .title{color: #666666; font-size: 19px; font-weight: bolder; margin-bottom: 30px; float: left;}
 #main .xiaoguo_content .xiaoguo_body .content{float: left;width: 1000px}
 
-
+#main a#shenbao_detail{width: 24px;height: 40px;background: url(../images/shenbaodetail.png) no-repeat center center;display: block;float: right;}
+#main a#shenbao_list_download{width: 24px;height: 40px;background: url(../images/shenbaodownload.png) no-repeat center center;display: block;float: right;}
+#main .shenbao_body{float: left;width: 1000px;}
+#main #shenbao_detail_download{float: right;border: 1px solid #b3b3b3; height: 40px; width: 80px;display: block;line-height: 40px; color: black; font-size: 14px; font-weight: bold;text-align: center;}
 
 

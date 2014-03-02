@@ -88,6 +88,11 @@ class CommonAction extends Action {
                     $value['url'] = U('Tese/index');
 
                 break;
+                case '27':
+
+                    $value['url'] = U('Shenbao/index');
+
+                break;
                 default:
                     # code...
                     break;

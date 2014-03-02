@@ -176,6 +176,7 @@ class CommonAction extends Action {
         $this->_upload();
         $_POST['content']= str_replace(__ROOT__.'/'.APP_NAME.'/Tpl/Public/ueditor/php/../../../../../Uploads', __ROOT__.'/Uploads', $_POST['content']);
         $name = $this->getActionName();
+ 
         $model = D($name);
         if (false === $model->create()) {
             $this->error($model->getError());
@@ -437,7 +438,7 @@ class CommonAction extends Action {
             //设置上传文件大小
             $upload->maxSize = 2097152;
             //设置上传文件类型
-            $upload->allowExts = explode(',', 'jpg,gif,png,jpeg,zip,rar,swf,flv');
+            $upload->allowExts = explode(',', 'doc,docx,pdf,jpg,gif,png,jpeg,zip,rar,swf,flv');
             //设置附件上传目录
             $y = date('Y',time());
             $m = date('m',time());
